@@ -1,10 +1,9 @@
 import { browser, Config } from 'protractor';
 import { AccountPage } from '../Pages/AccountPage';
 import { config } from '../config';
-
+import {} from 'jasmine';
 describe("Automating Customer Login Functionality", async () => {
 
-    
     afterAll(function(done){
         process.nextTick(done);
     });

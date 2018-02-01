@@ -1,39 +1,26 @@
-import { browser, Config } from 'protractor';
+import { browser, Config, element, by, $$, $ } from 'protractor';
 import { AccountPage } from '../Pages/AccountPage';
 import { config } from '../config';
+import { WebElement } from 'selenium-webdriver';
+import { WebElementLocator } from '../Utilities/WebElementLocator';
 
-describe("Automating Customer Login Functionality", async () => {
+describe("check Protractor locators", async () => {
 
-    
-    afterAll(function(done){
+    const exp = async () => {
+        var a = 12;
+        await expect(a).toBe(a);
+    }
+
+    afterAll(function (done) {
         process.nextTick(done);
     });
     var login = new AccountPage();
-    it('Login Into Account', async () => {      
-        browser.get(config.baseUrl);
-        await login.clickManagerLoginBtn();
-        var a=12;
-        expect(a).toBe(a);
-    });
-    it('click on Add customer ', async () => {
-        await login.clickAddCutomerBtn();
-        var a=12;
-        expect(a).toBe(a);
-    });
-    it('Enter All valid details  ', async () => {
-        await login.EnterFirstName('rohit');
-        await login.EnterLastName('saini');
-        await login.EnterPostalCode('98971');
-        var a=12;
-        expect(a).toBe(a);
-        
-       
+    it('Login Into Account', async () => {
+        await browser.get(config.baseUrl);
+        await element(by.buttonText('Customer Login')).click();
+        await WebElementLocator.getDropDownByID('userSelect','Harry Potter');
+        await exp();
+        browser.sleep(3000);
     });
 
-    it('click on Save  customer ', async () => {
-        await login.clickSaveCustomer();
-        var a=12;
-        expect(a).toBe(14);
-        
-    });
 });

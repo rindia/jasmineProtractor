@@ -39,70 +39,44 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var protractor_1 = require("protractor");
 var AccountPage_1 = require("../Pages/AccountPage");
 var config_1 = require("../config");
-describe("Automating Customer Login Functionality", function () { return __awaiter(_this, void 0, void 0, function () {
+var WebElementLocator_1 = require("../Utilities/WebElementLocator");
+describe("check Protractor locators", function () { return __awaiter(_this, void 0, void 0, function () {
     var _this = this;
-    var login;
+    var exp, login;
     return __generator(this, function (_a) {
+        exp = function () { return __awaiter(_this, void 0, void 0, function () {
+            var a;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        a = 12;
+                        return [4 /*yield*/, expect(a).toBe(a)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        }); };
         afterAll(function (done) {
             process.nextTick(done);
         });
         login = new AccountPage_1.AccountPage();
         it('Login Into Account', function () { return __awaiter(_this, void 0, void 0, function () {
-            var a;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0:
-                        protractor_1.browser.get(config_1.config.baseUrl);
-                        return [4 /*yield*/, login.clickManagerLoginBtn()];
+                    case 0: return [4 /*yield*/, protractor_1.browser.get(config_1.config.baseUrl)];
                     case 1:
                         _a.sent();
-                        a = 12;
-                        expect(a).toBe(a);
-                        return [2 /*return*/];
-                }
-            });
-        }); });
-        it('click on Add customer ', function () { return __awaiter(_this, void 0, void 0, function () {
-            var a;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, login.clickAddCutomerBtn()];
-                    case 1:
-                        _a.sent();
-                        a = 12;
-                        expect(a).toBe(a);
-                        return [2 /*return*/];
-                }
-            });
-        }); });
-        it('Enter All valid details  ', function () { return __awaiter(_this, void 0, void 0, function () {
-            var a;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, login.EnterFirstName('rohit')];
-                    case 1:
-                        _a.sent();
-                        return [4 /*yield*/, login.EnterLastName('saini')];
+                        return [4 /*yield*/, protractor_1.element(protractor_1.by.buttonText('Customer Login')).click()];
                     case 2:
                         _a.sent();
-                        return [4 /*yield*/, login.EnterPostalCode('98971')];
+                        return [4 /*yield*/, WebElementLocator_1.WebElementLocator.getDropDownByID('userSelect', 'Harry Potter')];
                     case 3:
                         _a.sent();
-                        a = 12;
-                        expect(a).toBe(a);
-                        return [2 /*return*/];
-                }
-            });
-        }); });
-        it('click on Save  customer ', function () { return __awaiter(_this, void 0, void 0, function () {
-            var a;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, login.clickSaveCustomer()];
-                    case 1:
+                        return [4 /*yield*/, exp()];
+                    case 4:
                         _a.sent();
-                        a = 12;
-                        expect(a).toBe(14);
+                        protractor_1.browser.sleep(3000);
                         return [2 /*return*/];
                 }
             });

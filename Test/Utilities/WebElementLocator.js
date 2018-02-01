@@ -46,6 +46,18 @@ var WebElementLocator = /** @class */ (function () {
             });
         });
     };
+    WebElementLocator.getDropDownByID = function (id, text) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, protractor_1.element(protractor_1.by.id(id)).all(protractor_1.by.cssContainingText('option', text)).click()];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
     WebElementLocator.selectByValue = function (value) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {

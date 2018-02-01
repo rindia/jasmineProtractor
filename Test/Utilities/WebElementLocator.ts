@@ -5,7 +5,11 @@ export class WebElementLocator {
     static async  getOptions() {
         return element.all(by.tagName('option'));
     }
+    static async getDropDownByID(id, text) {
 
+        await element(by.id(id)).all(by.cssContainingText('option', text)).click();
+
+    }
     static async selectByValue(value) {
         return element.all(by.css('option[value="' + value + '"]')).click();
     }
