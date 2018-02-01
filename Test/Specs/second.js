@@ -73,8 +73,28 @@ describe("check Protractor locators", function () { return __awaiter(_this, void
                         return [4 /*yield*/, WebElementLocator_1.WebElementLocator.getDropDownByID('userSelect', 'Harry Potter')];
                     case 3:
                         _a.sent();
-                        return [4 /*yield*/, exp()];
+                        return [4 /*yield*/, protractor_1.element(protractor_1.by.buttonText('Login')).click()];
                     case 4:
+                        _a.sent();
+                        return [4 /*yield*/, WebElementLocator_1.WebElementLocator.getDropDownByID('accountSelect', '1005')];
+                    case 5:
+                        _a.sent();
+                        return [4 /*yield*/, protractor_1.element.all(protractor_1.by.xpath('/html/body/div/div/div[2]/div/div[2]/strong[1]')).getText().then(function (text) {
+                                expect(text).toContain("1005");
+                            })];
+                    case 6:
+                        _a.sent();
+                        return [4 /*yield*/, protractor_1.element(protractor_1.by.css('[ng-click="deposit()"]')).click()];
+                    case 7:
+                        _a.sent();
+                        return [4 /*yield*/, protractor_1.element(protractor_1.by.model('amount')).sendKeys(2000)];
+                    case 8:
+                        _a.sent();
+                        return [4 /*yield*/, protractor_1.element(protractor_1.by.xpath('/html/body/div/div/div[2]/div/div[4]/div/form/button')).click()];
+                    case 9:
+                        _a.sent();
+                        return [4 /*yield*/, exp()];
+                    case 10:
                         _a.sent();
                         protractor_1.browser.sleep(3000);
                         return [2 /*return*/];

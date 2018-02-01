@@ -15,6 +15,7 @@ export class WebElementLocator {
     }
 
     static async getSelectedOptions() {
+        
         return element.all(by.css('option[selected="selected"]'));
     }
 
