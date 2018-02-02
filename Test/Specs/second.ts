@@ -25,10 +25,12 @@ describe("check Protractor locators", async () => {
              
             expect(text).toContain("1005");
         });
+     
         await element(by.css('[ng-click="deposit()"]')).click();
         await element(by.model('amount')).sendKeys(2000);
         await element(by.xpath('/html/body/div/div/div[2]/div/div[4]/div/form/button')).click();
         await exp();
+        
         browser.sleep(3000);
     });
 

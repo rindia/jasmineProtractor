@@ -12,6 +12,7 @@ var IdentificationType;
     IdentificationType[IdentificationType["Model"] = 6] = "Model";
     IdentificationType[IdentificationType["ClassName"] = 7] = "ClassName";
     IdentificationType[IdentificationType["Binding"] = 8] = "Binding";
+    IdentificationType[IdentificationType["LinkText"] = 9] = "LinkText";
 })(IdentificationType = exports.IdentificationType || (exports.IdentificationType = {}));
 var BasePage = /** @class */ (function () {
     function BasePage() {
@@ -32,6 +33,10 @@ var BasePage = /** @class */ (function () {
                 return protractor_1.element(protractor_1.by.model(obj.value));
             case IdentificationType[IdentificationType.Binding]:
                 return protractor_1.element(protractor_1.by.binding(obj.value));
+            case IdentificationType[IdentificationType.LinkText]:
+                return protractor_1.element(protractor_1.by.linkText(obj.value));
+            case IdentificationType[IdentificationType.PartialLinkText]:
+                return protractor_1.element(protractor_1.by.partialLinkText(obj.value));
             default:
                 break;
         }

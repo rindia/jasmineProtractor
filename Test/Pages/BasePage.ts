@@ -11,10 +11,12 @@ export  enum IdentificationType {
     ButtonText,
     Model,
     ClassName,
-    Binding
+    Binding,
+    LinkText
 }
 
 export class BasePage {
+    
    
   protected  ElementLocator(obj:any) {
         switch (obj.type) {
@@ -32,6 +34,10 @@ export class BasePage {
                 return element(by.model(obj.value));
                 case IdentificationType[IdentificationType.Binding]:
                 return element(by.binding(obj.value));
+                case IdentificationType[IdentificationType.LinkText]:
+                return element(by.linkText(obj.value));
+                case IdentificationType[IdentificationType.PartialLinkText]:
+                return element(by.partialLinkText(obj.value));
             default:
                 break;
         }

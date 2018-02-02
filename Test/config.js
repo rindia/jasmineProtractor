@@ -48,20 +48,27 @@ exports.config = {
     directConnect: true,
     framework: "jasmine2",
     capabilities: {
-        browserName: "chrome"
+        browserName: "chrome",
+        'chromeOptions': {
+            'args': ['disable-infobars']
+        }
     },
-    baseUrl: "http://www.globalsqa.com/angularJs-protractor/BankingProject/#/login",
-    specs: ["./Specs/*.js"],
+    baseUrl: "http://automationpractice.com/index.php",
+    specs: ["./Specs/Account/*.js"],
+    suites: {
+        Account: ["./Specs/Account/*.js"]
+    },
     seleniumAddress: "http://localhost:4444/wd/hub",
     jasmineNodeOpts: {
         showColors: true,
-        defaultTimeoutInterval: 30000 // Default time to wait in ms before a test fails.
+        defaultTimeoutInterval: 45000 // Default time to wait in ms before a test fails.
     },
     onPrepare: function () { return __awaiter(_this, void 0, void 0, function () {
         var Jasmine2HtmlReporter, _a, _b;
         return __generator(this, function (_c) {
             switch (_c.label) {
                 case 0:
+                    protractor_1.browser.ignoreSynchronization = true;
                     protractor_1.browser
                         .manage()
                         .window()

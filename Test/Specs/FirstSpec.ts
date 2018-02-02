@@ -1,4 +1,4 @@
-import { browser, Config } from 'protractor';
+import { browser } from 'protractor';
 import { AccountPage } from '../Pages/AccountPage';
 import { config } from '../config';
 import {} from 'jasmine';
