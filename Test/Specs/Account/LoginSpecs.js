@@ -39,6 +39,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var LoginPage_1 = require("../../Pages/Account/LoginPage");
 var protractor_1 = require("protractor");
 var config_1 = require("../../config");
+var JsonData = require('../../JsonData/Login.json');
 var exp = function () { return __awaiter(_this, void 0, void 0, function () {
     var a;
     return __generator(this, function (_a) {
@@ -79,7 +80,7 @@ describe('check Login functionality is Working - Positve Test Input', function (
         it('Then I Enter Email ID', function () { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, login.enterEmailAddress('rohit.saini.uk@gmail.com')];
+                    case 0: return [4 /*yield*/, login.enterEmailAddress(JsonData.Login.UserName)];
                     case 1:
                         _a.sent();
                         return [4 /*yield*/, exp()];

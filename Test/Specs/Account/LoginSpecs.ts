@@ -1,7 +1,15 @@
 import { LoginPage } from "../../Pages/Account/LoginPage";
 import { browser } from "protractor";
 import { config } from '../../config';
+import * as json from 'load-json-file';
 
+var JsonData =  require( '../../JsonData/Login.json');
+interface SearchJsonData{
+
+    UserName:string, 
+    Password:string
+
+}
 
 const exp = async () => {
     var a = 12;
@@ -19,7 +27,9 @@ describe('check Login functionality is Working - Positve Test Input', async () =
       
     });
     it('Then I Enter Email ID',async()=>{
-      await login.enterEmailAddress('rohit.saini.uk@gmail.com');
+    
+      await login.enterEmailAddress(JsonData.Login.UserName);
+    
       await exp();
     });
     it('Then I Enter password', async ()=>{
