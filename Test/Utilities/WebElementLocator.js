@@ -59,11 +59,7 @@ var WebElementLocator = /** @class */ (function () {
         });
     };
     WebElementLocator.selectByValue = function (value) {
-        return __awaiter(this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
-                return [2 /*return*/, protractor_1.element.all(protractor_1.by.css('option[value="' + value + '"]')).click()];
-            });
-        });
+        return protractor_1.element.all(protractor_1.by.css('option[value="' + value + '"]')).click();
     };
     WebElementLocator.getSelectedOptions = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -83,6 +79,18 @@ var WebElementLocator = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 return [2 /*return*/, protractor_1.element.all(protractor_1.by.xpath('option[.="' + text + '"]')).click()];
+            });
+        });
+    };
+    WebElementLocator.ngclick = function (method) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, protractor_1.element(protractor_1.by.css('[ng-click="' + method + '"]')).click()];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
             });
         });
     };

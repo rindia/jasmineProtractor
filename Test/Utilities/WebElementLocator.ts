@@ -1,4 +1,4 @@
-import { element, by, By } from 'protractor';
+import { element, by } from 'protractor';
 
 export class WebElementLocator {
 
@@ -10,7 +10,7 @@ export class WebElementLocator {
         await element(by.id(id)).all(by.cssContainingText('option', text)).click();
 
     }
-    static async selectByValue(value) {
+    static  selectByValue(value) {
         return element.all(by.css('option[value="' + value + '"]')).click();
     }
 
@@ -25,6 +25,11 @@ export class WebElementLocator {
 
     static async selectByText(text) {
         return element.all(by.xpath('option[.="' + text + '"]')).click();
+    }
+
+    static async ngclick(method:string)
+    {
+      await  element(by.css('[ng-click="'+method+'"]')).click();
     }
 
 }

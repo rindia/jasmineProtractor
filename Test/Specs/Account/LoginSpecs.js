@@ -55,7 +55,7 @@ var exp = function () { return __awaiter(_this, void 0, void 0, function () {
 afterAll(function (done) {
     process.nextTick(done);
 });
-describe('check Login functionality is Working', function () { return __awaiter(_this, void 0, void 0, function () {
+describe('check Login functionality is Working - Positve Test Input', function () { return __awaiter(_this, void 0, void 0, function () {
     var _this = this;
     var login;
     return __generator(this, function (_a) {
