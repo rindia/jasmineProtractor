@@ -11,7 +11,7 @@ const Loctors = {
     TxtEmail: {
         type: IdentificationType[IdentificationType.Id],
         value: 'email'
-    },
+    }, 
     TxtPassword: {
         type: IdentificationType[IdentificationType.Id],
         value: 'passwd'
@@ -23,14 +23,6 @@ const Loctors = {
 }
 
 export class LoginPage extends BasePage {
-
-    // constructor()
-    // {
-    //       super();         
-    //       var a = 12;
-    //        expect(a).toBe(a);
-     
-    // }
 
     async clickSignInLink() {
         await this.ElementLocator(Loctors.SignInLnk).click();

@@ -12,22 +12,27 @@ import { Config, browser } from "protractor";
 export let config: Config = {
   directConnect: true,
   framework: "jasmine2",
+  shardTestFiles: true,
+  maxInstances: 2,  
   capabilities: {
-    browserName: "chrome",
+    browserName: "chrome", 
     'chromeOptions': {
-      'args': ['disable-infobars']
+      'args': ['disable-infobars',
+      "--headless", "--disable-gpu", 
+      //"--window-size=800,600"
+    ]
   }
   },
   baseUrl:
     "http://automationpractice.com/index.php",
-  specs: ["./Specs/Account/*.js"],
+  specs: ["./dist/Specs/Account/*.js"],
 
   suites:{
 
     Account:["./Specs/Account/*.js"]
   },
 
-  seleniumAddress: "http://localhost:4444/wd/hub",
+  seleniumAddress: "http://localhost/:4444/wd/hub",
   jasmineNodeOpts: {
     showColors: true, // Use colors in the command line report.
     defaultTimeoutInterval: 45000 // Default time to wait in ms before a test fails.
@@ -35,10 +40,10 @@ export let config: Config = {
 
   onPrepare: async () => {
      browser.ignoreSynchronization=true;
-      browser
-      .manage()
-      .window()
-      .maximize();
+      // browser
+      // .manage()
+      // .window()
+      // .maximize();
     
     var Jasmine2HtmlReporter = require("protractor-jasmine2-html-reporter");
     await jasmine.getEnv().addReporter(

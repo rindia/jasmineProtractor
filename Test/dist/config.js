@@ -9,8 +9,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function () { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function () { return this; }), g;
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
@@ -45,61 +45,48 @@ var protractor_1 = require("protractor");
 //     screenshotOnPassed: true
 // });
 exports.config = {
-    directConnect: false,
+    directConnect: true,
     framework: "jasmine2",
-    splitTestsBetweenCapabilities: true,
-    multiCapabilities: [{
-        browserName: 'chrome',
-        count: 2,
+    shardTestFiles: true,
+    maxInstances: 2,
+    capabilities: {
+        browserName: "chrome",
         'chromeOptions': {
-                   'args': ['disable-infobars',
-                          "--headless", "--disable-gpu",
-                ]
-            },
-       
-    }],
-    // capabilities: {
-    //     browserName: "chrome",
-    //     'chromeOptions': {
-    //         'args': ['disable-infobars',
-    //              "--headless", "--disable-gpu",
-    //         ]
-    //     },
-    //     shardTestFiles: true,
-    //     maxInstances: 2,
-    // },
+            'args': ['disable-infobars',
+                "--headless", "--disable-gpu",
+            ]
+        }
+    },
     baseUrl: "http://automationpractice.com/index.php",
     specs: ["./dist/Specs/Account/*.js"],
     suites: {
         Account: ["./Specs/Account/*.js"]
     },
-    seleniumAddress: 'http://localhost:4444/wd/hub',
+    seleniumAddress: "http://localhost/:4444/wd/hub",
     jasmineNodeOpts: {
         showColors: true,
         defaultTimeoutInterval: 45000 // Default time to wait in ms before a test fails.
     },
-    onPrepare: function () {
-        return __awaiter(void 0, void 0, void 0, function () {
-            var Jasmine2HtmlReporter, _a, _b;
-            return __generator(this, function (_c) {
-                switch (_c.label) {
-                    case 0:
-                        protractor_1.browser.ignoreSynchronization = true;
-                        Jasmine2HtmlReporter = require("protractor-jasmine2-html-reporter");
-                        _b = (_a = jasmine.getEnv()).addReporter;
-                        return [4 /*yield*/, new Jasmine2HtmlReporter({
+    onPrepare: function () { return __awaiter(void 0, void 0, void 0, function () {
+        var Jasmine2HtmlReporter, _a, _b;
+        return __generator(this, function (_c) {
+            switch (_c.label) {
+                case 0:
+                    protractor_1.browser.ignoreSynchronization = true;
+                    Jasmine2HtmlReporter = require("protractor-jasmine2-html-reporter");
+                    _b = (_a = jasmine.getEnv()).addReporter;
+                    return [4 /*yield*/, new Jasmine2HtmlReporter({
                             savePath: "./reports/",
                             takeScreenshots: true,
                             takeScreenshotsOnlyOnFailures: true
                         })];
-                    case 1: return [4 /*yield*/, _b.apply(_a, [_c.sent()])];
-                    case 2:
-                        _c.sent();
-                        return [2 /*return*/];
-                }
-            });
+                case 1: return [4 /*yield*/, _b.apply(_a, [_c.sent()])];
+                case 2:
+                    _c.sent();
+                    return [2 /*return*/];
+            }
         });
-    },
+    }); },
     noGlobals: true
 };
 //# sourceMappingURL=config.js.map

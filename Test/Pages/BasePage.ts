@@ -8,7 +8,7 @@ export  enum IdentificationType {
     Id,
     Name,
     PartialLinkText,
-    ButtonText,
+    ButtonText, 
     Model,
     ClassName,
     Binding,

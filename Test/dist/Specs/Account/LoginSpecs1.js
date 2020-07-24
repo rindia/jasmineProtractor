@@ -1,9 +1,10 @@
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
         function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
@@ -14,8 +15,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
         while (_) try {
-            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [0, t.value];
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
                 case 0: case 1: t = op; break;
                 case 4: _.label++; return { value: op[1], done: false };
@@ -34,75 +35,80 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
+var LoginPage_1 = require("../../Pages/Account/LoginPage");
 var protractor_1 = require("protractor");
-var AccountPage_1 = require("../Pages/AccountPage");
-var config_1 = require("../config");
-describe("Automating Customer Login Functionality", function () { return __awaiter(_this, void 0, void 0, function () {
-    var _this = this;
+var config_1 = require("../../config");
+var assert_1 = require("assert");
+var exp = function () { return __awaiter(void 0, void 0, void 0, function () {
+    var a;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                a = 12;
+                return [4 /*yield*/, expect(a).toBe(a)];
+            case 1:
+                _a.sent();
+                return [2 /*return*/];
+        }
+    });
+}); };
+describe('check Login functionality is Working - Positve Test Input', function () { return __awaiter(void 0, void 0, void 0, function () {
     var login;
     return __generator(this, function (_a) {
-        afterAll(function (done) {
-            process.nextTick(done);
-        });
-        login = new AccountPage_1.AccountPage();
-        it('Login Into Account', function () { return __awaiter(_this, void 0, void 0, function () {
-            var a;
+        login = new LoginPage_1.LoginPage();
+        it('When I Open Page and click on SignIn Link', function () { return __awaiter(void 0, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0:
-                        protractor_1.browser.get(config_1.config.baseUrl);
-                        return [4 /*yield*/, login.clickManagerLoginBtn()];
+                    case 0: return [4 /*yield*/, protractor_1.browser.get(config_1.config.baseUrl)];
                     case 1:
                         _a.sent();
-                        a = 12;
-                        expect(a).toBe(a);
-                        return [2 /*return*/];
-                }
-            });
-        }); });
-        it('click on Add customer ', function () { return __awaiter(_this, void 0, void 0, function () {
-            var a;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, login.clickAddCutomerBtn()];
-                    case 1:
-                        _a.sent();
-                        a = 12;
-                        expect(a).toBe(a);
-                        return [2 /*return*/];
-                }
-            });
-        }); });
-        it('Enter All valid details  ', function () { return __awaiter(_this, void 0, void 0, function () {
-            var a;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, login.EnterFirstName('rohit')];
-                    case 1:
-                        _a.sent();
-                        return [4 /*yield*/, login.EnterLastName('saini')];
+                        return [4 /*yield*/, login.clickSignInLink()];
                     case 2:
                         _a.sent();
-                        return [4 /*yield*/, login.EnterPostalCode('98971')];
+                        return [4 /*yield*/, protractor_1.browser.manage().timeouts().implicitlyWait(4000)];
                     case 3:
                         _a.sent();
-                        a = 12;
-                        expect(a).toBe(a);
                         return [2 /*return*/];
                 }
             });
         }); });
-        it('click on Save  customer ', function () { return __awaiter(_this, void 0, void 0, function () {
-            var a;
+        it('Then I Enter Email ID', function () { return __awaiter(void 0, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, login.clickSaveCustomer()];
+                    case 0: return [4 /*yield*/, login.enterEmailAddress('runable.om@gmail.com')];
                     case 1:
                         _a.sent();
-                        a = 12;
-                        expect(a).toBe(12);
+                        return [4 /*yield*/, exp()];
+                    case 2:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        }); });
+        it('Then I Enter password', function () { return __awaiter(void 0, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, login.enterPassword('sainix')];
+                    case 1:
+                        _a.sent();
+                        return [4 /*yield*/, exp()];
+                    case 2:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        }); });
+        it('And I Click On Sign In Button', function () { return __awaiter(void 0, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, login.clickSignBtn()];
+                    case 1:
+                        _a.sent();
+                        assert_1.fail('hardcode failes', 'failing');
+                        return [4 /*yield*/, exp()];
+                    case 2:
+                        _a.sent();
                         return [2 /*return*/];
                 }
             });
@@ -110,4 +116,4 @@ describe("Automating Customer Login Functionality", function () { return __await
         return [2 /*return*/];
     });
 }); });
-//# sourceMappingURL=FirstSpec.js.map
+//# sourceMappingURL=LoginSpecs1.js.map

@@ -1,6 +1,7 @@
 import { LoginPage } from "../../Pages/Account/LoginPage";
 import { browser } from "protractor";
 import { config } from '../../config';
+import { fail } from "assert";
 
 
 
@@ -15,22 +16,23 @@ describe('check Login functionality is Working - Positve Test Input', async () =
         await browser.get(config.baseUrl);
         await login.clickSignInLink();
         await browser.manage().timeouts().implicitlyWait(4000)
-       
-      
+
+
     });
-    it('Then I Enter Email ID',async()=>{
-    
-      await login.enterEmailAddress('runable.om@gmail.com');
-    
-      await exp();
+    it('Then I Enter Email ID', async () => {
+
+        await login.enterEmailAddress('runable.om@gmail.com');
+
+        await exp();
     });
-    it('Then I Enter password', async ()=>{
+    it('Then I Enter password', async () => {
         await login.enterPassword('sainix');
         await exp();
     });
- it('And I Click On Sign In Button',async ()=>{
-      await login.clickSignBtn();
-      await exp();
-    
- });
-}); 
+    it('And I Click On Sign In Button', async () => {
+        await login.clickSignBtn();
+         fail('hardcode failes', 'failing'); 
+        await exp(); 
+
+    });
+});

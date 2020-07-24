@@ -9,7 +9,7 @@ const Locators = {
     },
     BtnAddCustomer: {
         type: IdentificationType[IdentificationType.ButtonText],
-        value: 'Add Customer'
+        value: 'Add Customer' 
     },
     TxtFirstName: {
         type: IdentificationType[IdentificationType.Model],
