@@ -1,0 +1,22 @@
+{
+  "name": "proj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node node_modules/protractor/bin/protractor config.js",
+    "posttest": "node node_modules/allure-commandline/bin/allure generate allure-results --clean -o allure-report && node node_modules/allure-commandline/bin/allure generate allure-results"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jasmine": "^3.5.11",
+    "@types/node": "^14.0.26",
+    "node": "^14.5.0",
+    "protractor": "^7.0.0",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7",
+    "allure-commandline": "^2.13.0",
+    "jasmine-allure-reporter": "^1.0.2"
+  }
+}
