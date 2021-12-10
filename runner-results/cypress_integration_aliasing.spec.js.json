@@ -1,0 +1,10 @@
+{
+  "suites": 1,
+  "tests": 2,
+  "passes": 2,
+  "pending": 0,
+  "failures": 0,
+  "start": "2021-12-08T14:42:33.741Z",
+  "duration": 8090,
+  "file": "cypress/integration/aliasing.spec.js"
+}

@@ -1,0 +1,10 @@
+{
+  "suites": 2,
+  "tests": 8,
+  "passes": 8,
+  "pending": 0,
+  "failures": 0,
+  "start": "2021-12-08T14:43:27.858Z",
+  "duration": 8736,
+  "file": "cypress/integration/connectors.spec.js"
+}

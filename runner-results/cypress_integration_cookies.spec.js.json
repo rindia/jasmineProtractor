@@ -1,0 +1,10 @@
+{
+  "suites": 1,
+  "tests": 5,
+  "passes": 5,
+  "pending": 0,
+  "failures": 0,
+  "start": "2021-12-08T14:43:06.165Z",
+  "duration": 9138,
+  "file": "cypress/integration/cookies.spec.js"
+}

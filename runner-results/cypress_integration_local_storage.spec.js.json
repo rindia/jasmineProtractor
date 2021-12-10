@@ -1,0 +1,10 @@
+{
+  "suites": 1,
+  "tests": 1,
+  "passes": 1,
+  "pending": 0,
+  "failures": 0,
+  "start": "2021-12-08T14:44:06.070Z",
+  "duration": 6249,
+  "file": "cypress/integration/local_storage.spec.js"
+}

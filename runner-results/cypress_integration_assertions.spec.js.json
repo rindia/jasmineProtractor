@@ -1,0 +1,10 @@
+{
+  "suites": 3,
+  "tests": 9,
+  "passes": 9,
+  "pending": 0,
+  "failures": 0,
+  "start": "2021-12-08T14:42:40.906Z",
+  "duration": 13280,
+  "file": "cypress/integration/assertions.spec.js"
+}

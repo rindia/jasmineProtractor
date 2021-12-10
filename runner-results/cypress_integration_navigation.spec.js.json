@@ -1,0 +1,10 @@
+{
+  "suites": 1,
+  "tests": 3,
+  "passes": 3,
+  "pending": 0,
+  "failures": 0,
+  "start": "2021-12-08T14:44:23.601Z",
+  "duration": 8984,
+  "file": "cypress/integration/navigation.spec.js"
+}

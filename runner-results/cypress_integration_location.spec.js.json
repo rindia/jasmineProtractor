@@ -1,0 +1,10 @@
+{
+  "suites": 1,
+  "tests": 3,
+  "passes": 3,
+  "pending": 0,
+  "failures": 0,
+  "start": "2021-12-08T14:43:36.618Z",
+  "duration": 6852,
+  "file": "cypress/integration/location.spec.js"
+}
